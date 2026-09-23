@@ -1,6 +1,5 @@
 package com.example.app.dto;
 
-import com.example.app.entity.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,5 +13,6 @@ public class UserDto {
     private String firstName;
     private String lastName;
     private String email;
-    private UserRole role;
+    private String role;
+    private AddressDto address; // Added address field
 }
