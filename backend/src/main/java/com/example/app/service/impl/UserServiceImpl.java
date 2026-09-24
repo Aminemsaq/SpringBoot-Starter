@@ -29,13 +29,8 @@ public class UserServiceImpl implements UserService {
         User user = UserMapper.mapToUser(userDto);
 
         if (user.getAddress() != null) {
-            // Guarantee new address creation by clearing any incoming ID
             user.getAddress().setId(null);
-            
-            // Persist the Address entity explicitly first
             Address savedAddress = addressRepository.save(user.getAddress());
-            
-            // Attach the saved Address (with database-generated ID) to the User
             user.setAddress(savedAddress);
         }
 
